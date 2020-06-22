@@ -1,0 +1,6 @@
+!*.vhd
+*.
+*.mti
+*.mpf
+*.wlf
+work/*
