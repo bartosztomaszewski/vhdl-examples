@@ -4,23 +4,24 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity T15_Mux is
+entity T16_GenericMux is
 -- Inputs signals to this module
+generic (DataWidth : integer);
 port(
 	-- Inputs
-	Input1 : in unsigned(7 downto 0);
-	Input2 : in unsigned(7 downto 0);
-	Input3 : in unsigned(7 downto 0);
-	Input4 : in unsigned(7 downto 0);
+	Input1 : in unsigned(DataWidth-1 downto 0);
+	Input2 : in unsigned(DataWidth-1 downto 0);
+	Input3 : in unsigned(DataWidth-1 downto 0);
+	Input4 : in unsigned(DataWidth-1 downto 0);
 	
 	Control : in unsigned (1 downto 0);
 	
 	-- Outputs
-	Output : out unsigned(7 downto 0));
+	Output : out unsigned(DataWidth-1 downto 0));
 	
 end entity;
 
-architecture rtl of T15_Mux is -- rtl (or sim) can be changed what we like, but it tells us its test/simulation or, in this example, Register-transfer level.
+architecture rtl of T16_GenericMux is -- rtl (or sim) can be changed what we like, but it tells us its test/simulation or, in this example, Register-transfer level.
 -- place to declare signals
 -- signal Sig : unsigned(7 downto 0) := (others => "0");
 -- signal MySig : integer := 1;
