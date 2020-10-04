@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity T18_TimerTb is
+entity T19_ProcedureTB is
 end entity;
 
-architecture sim of T18_TimerTb is
+architecture sim of T19_ProcedureTB is
 -- place for signals
 	constant ClockFrequency : integer := 100;-- 100e6; -- 100 MHz
 	constant ClockPeriod : time := 1000 ms / ClockFrequency; 
@@ -18,7 +18,7 @@ architecture sim of T18_TimerTb is
 
 begin
 	-- The Device under Test (DUT)
-	i_Timer : entity work.T18_Timer(rtl)
+	i_Timer : entity work.T19_Timer(rtl)
 	generic map(ClockFrequency => ClockFrequency)
 	port map(
 		Clk  => Clk,
