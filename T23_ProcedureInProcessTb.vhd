@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity T22_ImpureFunctionTb is
+entity T23_ProcedureInProcess is
 end entity;
 
-architecture sim of T22_ImpureFunctionTb is
+architecture sim of T23_ProcedureInProcess is
 -- place for signals
 	constant ClockFrequency : integer := 100; -- 100 MHz
 	constant ClockPeriod : time := 1000 ms / ClockFrequency; 
@@ -21,7 +21,7 @@ architecture sim of T22_ImpureFunctionTb is
 
 begin
 	-- The Device under Test (DUT)
-	t_TrafficLights : entity work.T22_TrafficLights(rtl)
+	t_TrafficLights : entity work.T23_TrafficLights(rtl)
 	generic map(ClockFrequency => ClockFrequency)
 	port map(Clk         => Clk,
 			 nRst        => nRst,
